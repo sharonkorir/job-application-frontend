@@ -16,58 +16,121 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/seekers-profile">View Profile</a></li>
                         <li><a class="dropdown-item" href="/recruiter-profile">Update Profile</a></li>
-  
+
                     </ul>
                 </li>
                 <li>
                     <button class="btn btn-sec" type="submit">LogOut</button>
                 </li>
-  
+
             </ul>
-  
-  
-  
+
+
+
         </div>
     </div>
-  </nav>
+</nav>
 <div class="container">
 
 
-    
-        <h1 style="text-align: left; color: #49224A; padding-top: 30px;">Get your dream job by applying <br> one of these available jobs</h1>
-       
+
+    <h1 style="text-align: left; color: #49224A; padding-top: 30px;">Get your dream job by applying <br> one of these available jobs</h1>
 
 
-        <div class="form-group post-job">
 
-            <input type="text" class="form-control mb-4" placeholder="Search here " [(ngModel)]="searchList" id="listSearch" style="width:300px ;margin-left: 800px; margin-top: -150px;">
+    <div class="form-group post-job">
 
-        </div> 
-        <h3 style="margin-top:100px;">Checkout {{jobs.length}} jobs posted</h3>
-
-
-        
-
-    
-        <div class="row gx-5  ">
-            <div class="jobs col-md-6" *ngFor="let job of jobs | searchList:searchList">
-                <div class="p-3 border">
-                    <h3>{{job.title}}</h3>
-                    <div class="sub-head top">
-                        <p><i class="fa fa-briefcase" aria-hidden="true"></i>{{job.jobtype}}</p>
-                        <p><i class="fa fa-users" aria-hidden="true"></i>6 Applicants</p>
-                    </div>
-                    <br>
-                    <p>{{job.requirements}}</p>
-                    <div class="sub-head top">
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i><small> {{job.location}}</small></p>
-                        <p>posted on:</p>
-                    </div>
-                    <button type="submit" class="signupbtn" routerLink="/seekers-profile">Apply</button>
-                </div>
-            </div>
-    
-    
-        </div>
+        <input type="text" class="form-control mb-4" placeholder="Search here " [(ngModel)]="searchList" id="listSearch" style="width:300px ;margin-left: 800px; margin-top: -150px;">
 
     </div>
+    <h3 style="margin-top:100px;">Checkout {{jobs.length}} jobs posted</h3>
+
+
+
+
+
+    <div class="row gx-5  ">
+        <div class="jobs col-md-6" *ngFor="let job of jobs | searchList:searchList">
+            <div class="p-3 border">
+                <h3>{{job.title}}</h3>
+                <div class="sub-head top">
+                    <p><i class="fa fa-briefcase" aria-hidden="true"></i>{{job.jobtype}}</p>
+                    <p><i class="fa fa-users" aria-hidden="true"></i>6 Applicants</p>
+                </div>
+                <br>
+                <p>{{job.requirements}}</p>
+                <div class="sub-head top">
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i><small> {{job.location}}</small></p>
+                    <p>posted on:</p>
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn signupbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Apply
+  </button>
+
+                <!-- Modal -->
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Job Application</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h3 class="text-center">Fill in details to apply for this job</h3>
+                                    <br>
+                                    <br>
+
+                                    <form #userPost='ngForm' (ngSubmit)='onSubmit(userPost.value)'>
+                                        <h4>Contact Information</h4>
+
+                                        <hr>
+                                        <div class="form-group">
+
+                                            <label for="name">Full Names</label>
+
+                                            <input ngModel name="Full_Name" type="text" required class="form-control" id="name">
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="name">Email</label>
+                                            <input ngModel name="Email" type="text" required class="form-control" id="name">
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="name">Contact</label>
+                                            <input ngModel name="Contact" type="number" required class="form-control" id="name">
+
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <label for="name">Salary Expectations</label>
+                                            <input ngModel name="Salary_Expectations" type="text" required class="form-control" id="name">
+
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn-pri">Apply</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

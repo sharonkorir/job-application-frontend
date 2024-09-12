@@ -1,4 +1,3 @@
-
 nav{
   /*text-align: center; */
   font-size: 25px;
@@ -8,11 +7,10 @@ nav{
 .navbar-brand{
   color: white;
   font: bold;
-  padding-left: 40px;
+  /* padding-left: 300px; */
   font-family: 'Big Shoulders Stencil Text', cursive;
   font-size:40px;
 }
-
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -61,37 +59,20 @@ nav{
 .toolbar #youtube-logo:hover {
   opacity: 0.8;
 }
-
 #loginb{
   background-color: #49224A;
   border-color: white;
-  margin-right: 10px;
+  margin-right: -10px;
   color: white;
 }
 #signb{
  background-color: white;
  color: #49224A;
- margin-right: 16px;
-
+ margin-right: 20px;
 }
-.buttn{
-  margin-left: 530px;
-}
-.jobse{
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-  
-}
-.comp{
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-
-}
-.buttn{
-  margin-left: 710px;
-}
+/* .buttn{
+  margin-left: 600px;
+} */
 .jobse{
   color: white;
   text-decoration: none;
